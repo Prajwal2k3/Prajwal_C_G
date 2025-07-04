@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prajwal C G | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+
+  .menu-toggle {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--fg);
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  .menu a {
+    margin: 10px 0;
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition);
+  }
+
+  .menu a:hover {
+    color: var(--primary);
+  }
+
+  nav {
+  display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  #education .card p {
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+  }
+
+  #education .card p strong {
+    color: #58d68d;
+  }
+
+  /* Skills with Icons */
+  .skills-list p::before {
+    content: "💻 ";
+    margin-right: 6px;
+  }
+
+  .skills-list p:nth-child(2)::before {
+    content: "🛠️ ";
+  }
+
+  .skills-list p:nth-child(3)::before {
+    content: "🌐 ";
+  }
+
+    :root {
+      --primary: #00d1b2;
+      --bg: #0e0e0e;
+      --fg: #f5f5f5;
+      --card: #1e1e1e;
+      --transition: 0.4s ease;
+    }
+
+    * {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: radial-gradient(circle at center, #203a43, #0f2027);
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      position: relative;
+      animation: fadeInDown var(--transition);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      animation: typing 3s steps(30, end);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid var(--primary);
+      width: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .contact-links {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .contact-links a {
+      color: var(--fg);
+      margin-left: 12px;
+      font-size: 1.2rem;
+      transition: color var(--transition);
+    }
+
+    .contact-links a:hover {
+      color: var(--primary);
+    }
+
+    nav {
+      margin-top: 2rem;
+    }
+
+    nav a {
+      margin: 0 14px;
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+      animation: fadeInUp var(--transition);
+    }
+
+    h2 {
+      color: var(--primary);
+      border-left: 5px solid var(--primary);
+      padding-left: 0.6rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 15px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #58d68d;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin: 8px 8px 0 0;
+    }
+
+    a.button {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 10px 16px;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    a.button:hover {
+      background: #00b89c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aaa;
+      background: #1c1c1c;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  <div class="menu" id="dropdownMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publication">Research</a>
+    <a href="#contact">Resume</a>
+  </div>
+
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/prajwal-c-g-060344221/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:cgprajwal3@gmail.com@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Prajwal2k3 " target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    <img src="Prajwal_C_G.jpeg" alt="Prajwal Profile" class="profile-img">
+    <h1>Prajwal C G</h1>
+    <p>AI & Cloud Associate | Cloud Engineer | CSE @ MCE</p>
+    <!-- Replace the <nav> section with this if you want to hide nav on small screens -->
+  <nav class="desktop-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publication">Research</a>
+    <a href="#contact">Resume</a>
+  </nav>
+
+  </header>
+
+  <section id="about">
+    <h2>🧑‍💻 About Me</h2>
+    <div class="card">
+      <p>👨‍💻Computer Science Graduate | AI & Cloud Enthusiast | Certified in Salesforce, AWS & Python.</p>
+      <p>👨‍💻I’m an enthusiastic individual with a strong foundation in cloud computing, artificial intelligence, and full-stack development.</p>
+      <p>🧑‍🔬 Intern @ CosmoDrift Private Limited | Lead Management System,AWS,Salesforce.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>💼 Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><i class="fas fa-shopping-cart"></i> Lead Management System</h3>
+        <p>🔍 Developed a Lead Management System using tools like Python, AWS, MySQL, and Flask to streamline client acquisition.</p>
+        <div class="tags">
+        </div>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-x-ray"></i> Knee Osteoarthritis Detection</h3>
+        <p>🧠 Xception & ResNet on X-ray images for severity grading. Web app in progress.</p>
+        <div class="tags">
+          <span>Deep Learning</span><span>Medical Imaging</span><span>Python</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-briefcase"></i> Aptitude Career App</h3>
+        <p>📚 Python + SQLite app to prep for placements via aptitude practice sets.</p>
+        <div class="tags">
+          <span>Python</span><span>SQLite</span><span>Web App</span>
+        </div>
+        <a class="button" href="https://github.com/Prajwal2k3/Aptitude" target="_blank">GitHub</a>
+      </div>
+      <div class="card">
+        <div class="tags">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>🛠️ Skills</h2>
+    <div class="card">
+      <p><strong>Languages:</strong> Python, C</p>
+      <p><strong>Tools:</strong> Pandas, NumPy, HTML, CSS, MySQL</p>
+      <p><strong>Domains:</strong> AI, AWS, DSA, Web Development</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <div class="card">
+      <p><strong>B.E. - Computer Science</strong><br>Malnad College of Engineering, Hassan (2021–2025)<br>CGPA: 7.58</p>
+      <p><strong>Pre-University (PCMC)</strong><br>Masters PU College (2019–2021)<br>Percentage: 73.5%</p>
+      <p><strong>SSLC</strong><br>2018–2019<br>Percentage: 81.92%</p>
+    </div>
+  </section>
+
+  <section id="publication">
+    <h2>📄 Research Publication</h2>
+    <div class="card">
+      <p><strong>Knee Osteoarthritis Detection and Severity Classification</strong></p>
+      <p>🧠 Research using CNNs for X-ray based OA grading. Published in [Journal Name Placeholder], 2025.</p>
+      <a class="button" href="mainpaper.docx" target="_blank">View Publication</a>
+      <a class="button" href="prajwal_research.pdf" target="_blank">Certificate</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📎 Resume</h2>
+    <div class="card">
+      <p>📄 Want to learn more about my journey?</p>
+      <a class="button" href="Latex Resume Prajwal.pdf" download><i class="fas fa-download"></i> Download Resume</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>"Driven by data, powered by purpose."</p>
+  </footer>
+  
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('dropdownMenu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>
